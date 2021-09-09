@@ -58,6 +58,8 @@ Following are the apis supported in the project
       * whoPaid - mandatory, user who paid the bill.
       * expenseType  - mandatory, possible values : EQUAL,EXACT,PERCENT
       * owedUsers - mandatory, if expenseType = EQUAL, then {"emailorPhone": <email,number>} ,  if expenseType = EXACT, then {"emailorPhone": <email,number>, "amount" : <amount>} if expenseType, then {"percent": <percent>}
+      * expenseGroupName - mandatory, 
+      * billName - mandatory, Name of the bill.
 
   * GET /api/v1/expense?bill_id=<bill_id> => Get Bill Details
      * Query Param :
