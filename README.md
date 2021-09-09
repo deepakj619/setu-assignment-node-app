@@ -5,5 +5,5 @@ Created nodejs application for split app.
 The project uses express js as framework and mongodb as the main database
 
 # Install dependencies
-npm i
-
+```npm i
+```
