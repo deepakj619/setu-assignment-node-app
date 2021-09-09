@@ -20,5 +20,5 @@ A .env.example file is already provided with the project. Change the name to .en
 
 
 ## POSTMAN COLLECTIONS
-A [POSTMAN]() collection is also provided. You can import this file in your postman. This would load all apis
+A [POSTMAN](https://github.com/deepakj619/setu-assignment-node-app/blob/main/Setu-Assignment-Collection.postman_collection.json) collection is also provided. You can import this file in your postman. This would load all apis
 
