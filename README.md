@@ -26,7 +26,7 @@ A [POSTMAN](https://github.com/deepakj619/setu-assignment-node-app/blob/main/Set
 Following are the apis supported in the project
 
 
-## * /api/v1/user
+##  /api/v1/user
   * POST /user => Create User
     * Request Body :
       * email or phone number. (either one or both) - primary key
