@@ -58,10 +58,9 @@ Following are the apis supported in the project
       * whoPaid - mandatory, user who paid the bill.
       * expenseType  - mandatory, possible values : EQUAL,EXACT,PERCENT
       * owedUsers - mandatory, if expenseType = EQUAL, then {"emailorPhone": <email,number>} ,  if expenseType = EXACT, then {"emailorPhone": <email,number>, "amount" : <amount>} if expenseType, then {"percent": <percent>}
-  * GET /group => Get Group
+
+  * GET /api/v1/expense?bill_id=<bill_id> => Get Bill Details
      * Query Param :
-        * name - Group name.
-  * PUT /api/v1/user/group => Add user to a group.
-     * Request Body :
-       * groupName - mandatory
+        * bill_id - Bill id.
+ 
 
