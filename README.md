@@ -61,7 +61,7 @@ Following are the apis supported in the project
       * expenseGroupName - mandatory, 
       * billName - mandatory, Name of the bill.
 
-  * GET /api/v1/expense?bill_id=<bill_id> => Get Bill Details
+  * GET /api/v1/expense?bill_id=<bill_id>  =>  Get Bill Details
      * Query Param :
         * bill_id - Bill id.
  
