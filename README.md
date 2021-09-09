@@ -63,4 +63,9 @@ Following are the apis supported in the project
      * Query Param :
         * bill_id - Bill id.
  
+  * PUT /api/v1/expense
+     * Request Body :
+        * bill_id - mandatory
+        * user_id - mandatory, user who is paying the bill.
+        * amount - mandatory.
 
