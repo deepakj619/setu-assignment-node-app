@@ -19,6 +19,6 @@ npm start
 A .env.example file is already provided with the project. Change the name to .env. If you have a mongo db installed in local. Change configuration in this file. This will load up process.env values
 
 
-# POSTMAN COLLECTIONS
+## POSTMAN COLLECTIONS
 A POSTMAN collection is also provided. You can import this file in your postman. This would load all apis
 
