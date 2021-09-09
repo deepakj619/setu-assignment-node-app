@@ -73,7 +73,7 @@ const createExpense = async (req, res) => {
                     }
                  }
                  return res.status(200).json({
-                    message: 'User added to Group.',
+                    message: 'Bill Created Successully..',
                     status: 200
                 });	
 
