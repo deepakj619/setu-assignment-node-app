@@ -1,5 +1,5 @@
 # setu-assignment-node-app
-Created nodejs application for split app.
+Created nodejs application for split-wise app.
 
 # Features
 The project uses express js as framework and mongodb as the main database
