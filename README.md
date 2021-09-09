@@ -14,3 +14,9 @@ cd setu-assignment-node-app
 npm install
 npm start
 ```
+
+## .env file
+A .env.example file is already provided with the project. Change the name to .env. If you have a mongo db installed in local. Change configuration in this file. This will load up process.env values
+
+
+
