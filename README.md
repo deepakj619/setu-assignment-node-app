@@ -22,7 +22,7 @@ A .env.example file is already provided with the project. Change the name to .en
 ## POSTMAN COLLECTIONS
 A [POSTMAN](https://github.com/deepakj619/setu-assignment-node-app/blob/main/Setu-Assignment-Collection.postman_collection.json) collection is also provided. You can import this file in your postman. This would load all apis
 
-## API
+## API ENDPOINTS
 Following are the apis supported in the project
 
 
@@ -34,10 +34,34 @@ Following are the apis supported in the project
   * GET /user => Get User
      * Query Param :
         * email or phone number. (either one or both)
-   * PUT /api/v1/user/group => Add user to a group.
+  * PUT /api/v1/user/group => Add user to a group.
      * Request Body :
        * groupName - mandatory
        * email - mandatory
 
-
+##  /api/v1/group
+  * POST /group => Create Group
+    * Request Body :
+      * name - primary key
+      * description 
+  * GET /group => Get Group
+     * Query Param :
+        * name - Group name.
+  * PUT /api/v1/user/group => Add user to a group.
+     * Request Body :
+       * groupName - mandatory
+     
+##  /api/v1/expense
+  * POST /expense => Create Expense bill
+    * Request Body :
+      * amount - mandatory
+      * whoPaid - mandatory, user who paid the bill.
+      * expenseType  - mandatory, possible values : EQUAL,EXACT,PERCENT
+      * owedUsers - mandatory, if expenseType = EQUAL, then {"emailorPhone": <email,number>} ,  if expenseType = EXACT, then {"emailorPhone": <email,number>, "amount" : <amount>} if expenseType, then {"percent": <percent>}
+  * GET /group => Get Group
+     * Query Param :
+        * name - Group name.
+  * PUT /api/v1/user/group => Add user to a group.
+     * Request Body :
+       * groupName - mandatory
 
