@@ -9,6 +9,9 @@ router.get("/",(req,res) => {
     res.send("<h2> hi !! </h2>");
 });
 
+router.get('/',async(req,res) => {
+    res.send("<h2> Welcome to Setu App !");
+});
 // user endpoints.
 router.post("/api/v1/user",userController.createUser);
 router.get("/api/v1/user/",userController.getUser);

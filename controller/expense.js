@@ -35,7 +35,7 @@ const createExpense = async (req, res) => {
                  billOptions.outstanding_amount = totalAmount;
                  billOptions.no_of_owed_users = noOfowedUsers;
                  billOptions.bill_group = groupName;
-
+                 
                  let expenseBillId = await Utils.createExpense(billOptions);
                  let share = totalAmount/noOfowedUsers;
 
@@ -140,6 +140,7 @@ const createExpense = async (req, res) => {
             billOptions.outstanding_amount = totalAmount;
             billOptions.no_of_owed_users = noOfowedUsers;
             billOptions.bill_group = groupName;
+
             let expenseBillId = await Utils.createExpense(billOptions);
 
             for(let user of owedUsers){
