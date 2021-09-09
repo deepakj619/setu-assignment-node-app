@@ -5,9 +5,6 @@ const userController = require('../controller/user');
 const expenseController = require('../controller/expense');
 const groupController = require('../controller/group');
 
-router.get("/",(req,res) => {
-    res.send("<h2> hi !! </h2>");
-});
 
 router.get('/',async(req,res) => {
     res.send("<h2> Welcome to Setu App !");
