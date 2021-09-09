@@ -1,0 +1,49 @@
+- To create/store user information,groups,bill.
+- To get pending amount, settled amount - bill
+- To get outstanding balance, expecting amount - user
+- to pay the bill or create the bill.
+
+
+
+
+APIs:
+
+1. user and groups
+
+    -> GET /user/:id 
+    -> POST /user
+    -> GET /users/:groupid/
+    -> GET /user/bill/:groupid
+    -> GET /bill/:id/details
+    -> POST /group/ - create group - params [userids]
+
+2. bill
+ 
+    -> POST /bill - to create the bill - params: totalAmount, whoPaid, owes - [], spl
+    -> GET /bills/:groupid
+    -> GET /bill/:id 
+    -> POST /bill/:id/pay
+    
+
+User:
+
+    user_id
+    name
+    group_ids - []
+    outstanding = [(bill_id,shareAmount)]
+    expecting = [(bill_id,expectedAmount)]
+
+Group: 
+
+    group_id
+    group_name
+    bill_ids - []
+
+Bill:
+
+    bill_id
+    outstanding_amount
+    original_amount
+    bill_type
+
+
