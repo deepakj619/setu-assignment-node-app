@@ -40,7 +40,6 @@ const createExpense = async (req, res) => {
                  let share = totalAmount/noOfowedUsers;
 
                  for(let user of owedUsers){
-                    console.log("TEST DATA " + JSON.stringify(owedUsers));
                      let userEmail = user.email;
                      let userPhone = user.phone;
                      if (userPhone){
@@ -54,8 +53,7 @@ const createExpense = async (req, res) => {
                             });
                             const result = await userExpense.save();
                             console.log(result);
-                        }
-                        
+                        } 
                     }
                     else if (userEmail)
                     {   
@@ -93,7 +91,6 @@ const createExpense = async (req, res) => {
                 let expenseBillId = await Utils.createExpense(billOptions);
 
                 for(let user of owedUsers){
-                   console.log("TEST DATA " + JSON.stringify(owedUsers));
                     let userEmail = user.email;
                     let userPhone = user.phone;
                     let share = user.amount;
@@ -143,7 +140,6 @@ const createExpense = async (req, res) => {
             billOptions.outstanding_amount = totalAmount;
             billOptions.no_of_owed_users = noOfowedUsers;
             billOptions.bill_group = groupName;
-
             let expenseBillId = await Utils.createExpense(billOptions);
 
             for(let user of owedUsers){
@@ -179,9 +175,7 @@ const createExpense = async (req, res) => {
                            bill_id: expenseBillId,
                            outstanding_amount: share
                        });
-                       const result = await userExpense.save();
-                       console.log(result);
-                       
+                       const result = await userExpense.save();            
                    }
                }
             }
@@ -207,9 +201,8 @@ const payBill = async (req, res) => {
         const bill_id = req.body.bill_id;
         const user_id = req.body.user_id;
         const amount = req.body.amount
-
-        await UserExpense.updateOne({ $and: [ { bill_id: bill_id }, { user_id: user_id } ] }, {$inc: { outstanding_amount: -amount}},).exec();
-        await Expense.updateOne({ bill_id: bill_id }, {$inc: { outstanding_amount: -amount}},).exec();
+        await UserExpense.updateOne({ $and: [ { bill_id: bill_id }, { user_id: user_id } ] }, {$inc: { outstanding_amount: -amount}}).exec();
+        await Expense.updateOne({ bill_id: bill_id }, {$inc: { outstanding_amount: -amount}}).exec();
         return res.status(200).json({
             message: 'Bill Paid Successfuly..',
             status: 200
