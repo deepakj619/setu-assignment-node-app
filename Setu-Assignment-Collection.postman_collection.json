@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "e429e2e7-0a3d-4747-8ebd-8f2a140ce8b5",
+		"name": "Setu-Assignment-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get an User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/user?email=deepak1@test.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "deepak1@test.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"bob\",\n    \"email\" : \"bob3@apple.com\",\n    \"phone\":\"9989567863\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Group",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Test Group\",\n    \"description\" : \"Group for Testing\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/group",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Group",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/group?name=Test Group",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"group"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Test Group"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add an User to Group",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"groupName\":\"Test Group\",\n    \"email\": \"deepak2@test.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/group",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Expense bill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 2000,\n    \"whoPaid\": \"deepak1@test.com\",\n    \"expenseType\": \"PERCENT\",\n    \"owedUsers\": [{\"email\": \"bob2@apple.com\" ,\"percent\": 50},{\"email\": \"bob1@apple.com\" , \"percent\":50}],\n    \"expenseGroupName\": \"Test Group\",\n    \"billName\": \"Test Bill 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/expense",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay Bill",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bill_id\":\"613a21ea5a861364373a38b0\",\n    \"user_id\": \"613a1b2a86bd3ecc5333cd9d\",\n    \"amount\": \"500\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/expense",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bill By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/expense?bill_id=613a21ea5a861364373a38b0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"expense"
+					],
+					"query": [
+						{
+							"key": "bill_id",
+							"value": "613a21ea5a861364373a38b0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
