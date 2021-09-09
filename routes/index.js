@@ -7,7 +7,7 @@ const groupController = require('../controller/group');
 
 
 router.get('/',async(req,res) => {
-    res.send("<h2> Welcome to Setu App !");
+    res.send("<h2> Welcome to Setu App !<h2> <br> <a href=https://github.com/deepakj619/setu-assignment-node-app>Link to Code Repo</a>");
 });
 // user endpoints.
 router.post("/api/v1/user",userController.createUser);
