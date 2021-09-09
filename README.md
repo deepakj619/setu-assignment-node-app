@@ -28,8 +28,16 @@ Following are the apis supported in the project
 
 ## * /api/v1/user
   * POST /user => Create User
-    * query param:
-      * email or phone number.
+    * Request Body :
+      * email or phone number. (either one or both) - primary key
+      * name 
+  * GET /user => Get User
+     * Query Param :
+        * email or phone number. (either one or both)
+   * PUT /api/v1/user/group => Add user to a group.
+     * Request Body :
+       * groupName - mandatory
+       * email - mandatory
 
 
 
